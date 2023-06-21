@@ -21,7 +21,7 @@ class _ProductsViewState extends ConsumerState<ProductsView> {
         height: 1024,
         width: MediaQuery.of(context).size.width,
         color: AppColors().whiteEB,
-        padding: const EdgeInsets.only(top: 116, bottom: 79),
+        padding: const EdgeInsets.only(top: 150, bottom: 50),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -34,7 +34,7 @@ class _ProductsViewState extends ConsumerState<ProductsView> {
                   padding: const EdgeInsets.only(bottom: 40),
                   decoration: const BoxDecoration(
                     image: DecorationImage(
-                      image: AssetImage("assets/images/hero_02.png"),
+                      image: AssetImage("assets/images/products_01.png"),
                       fit: BoxFit.cover,
                     ),
                     borderRadius: BorderRadius.all(Radius.circular(20))
@@ -59,6 +59,69 @@ class _ProductsViewState extends ConsumerState<ProductsView> {
                     ),
                   ),
                 ),
+                Container(
+                  height: 600,
+                  width: 400,
+                  padding: const EdgeInsets.only(bottom: 40),
+                  decoration: const BoxDecoration(
+                      image: DecorationImage(
+                        image: AssetImage("assets/images/hero_02.png"),
+                        fit: BoxFit.cover,
+                      ),
+                      borderRadius: BorderRadius.all(Radius.circular(20))
+                  ),
+                  child: Align(
+                    alignment: Alignment.bottomCenter,
+                    child: ElevatedButton(
+                      onPressed: () {},
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: AppColors().white,
+                        shadowColor: Colors.black.withOpacity(.25),
+                        fixedSize: const Size(218, 57),
+                      ),
+                      child: Text(
+                        "Hoodies",
+                        style: GoogleFonts.inter(
+                          fontSize: 24,
+                          color: Colors.black,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                Container(
+                  height: 600,
+                  width: 400,
+                  padding: const EdgeInsets.only(bottom: 40),
+                  decoration: const BoxDecoration(
+                      image: DecorationImage(
+                        image: AssetImage("assets/images/products_01.png"),
+                        fit: BoxFit.cover,
+                      ),
+                      borderRadius: BorderRadius.all(Radius.circular(20))
+                  ),
+                  child: Align(
+                    alignment: Alignment.bottomCenter,
+                    child: ElevatedButton(
+                      onPressed: () {},
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: AppColors().white,
+                        shadowColor: Colors.black.withOpacity(.25),
+                        fixedSize: const Size(218, 57),
+                      ),
+                      child: Text(
+                        "Pair",
+                        style: GoogleFonts.inter(
+                          fontSize: 24,
+                          color: Colors.black,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+
               ],
             ),
             Text(

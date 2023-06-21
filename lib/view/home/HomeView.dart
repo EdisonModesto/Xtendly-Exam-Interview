@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:xtendly_exam_interview/view/home/Hero/HeroView.dart';
 import 'package:xtendly_exam_interview/view/home/Products/ProductsView.dart';
+import 'package:xtendly_exam_interview/view/home/Sale/SaleView.dart';
+import 'package:xtendly_exam_interview/widgets/custom_footer.dart';
 import 'package:xtendly_exam_interview/widgets/custom_nav.dart';
+import 'package:xtendly_exam_interview/widgets/sale_banner.dart';
 
 
 class HomeView extends ConsumerStatefulWidget {
@@ -27,6 +30,9 @@ class _HomeViewState extends ConsumerState<HomeView> {
                 children: [
                   HeroView(),
                   ProductsView(),
+                  SaleBanner(),
+                  SaleView(),
+                  CustomFooter()
                 ],
               ),
             ),
