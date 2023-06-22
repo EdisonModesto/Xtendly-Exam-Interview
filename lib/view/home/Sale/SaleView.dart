@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:xtendly_exam_interview/constants/breakpoints.dart';
 import 'package:xtendly_exam_interview/widgets/sale_card.dart';
@@ -26,7 +27,21 @@ class _SaleViewState extends ConsumerState<SaleView> {
         child: Column(
           children: [
             Expanded(
-               child: GridView.count(
+               child: AlignedGridView.count(
+                 padding: EdgeInsets.symmetric(horizontal: constraints.maxWidth < mobileBreakpoint ? 20 : 80),
+                 crossAxisCount: constraints.maxWidth < mobileBreakpoint ? 2 : 4,
+                 mainAxisSpacing: constraints.maxWidth < mobileBreakpoint ? 30 : 50,
+                 crossAxisSpacing: constraints.maxWidth < mobileBreakpoint ? 30 : 50,
+                 itemCount: constraints.maxWidth < mobileBreakpoint ? 6 : 8,
+                 physics: const NeverScrollableScrollPhysics(),
+                 itemBuilder: (context, index) {
+                   return SaleCard(
+                     screenWidth: constraints.maxWidth,
+                   );
+                 },
+               ),
+
+              /*GridView.count(
                   crossAxisCount: constraints.maxWidth < mobileBreakpoint ? 2 : 4,
                   mainAxisSpacing: 5,
                   crossAxisSpacing: constraints.maxWidth * 0.1,
@@ -35,7 +50,7 @@ class _SaleViewState extends ConsumerState<SaleView> {
                   children: List.generate(8, (index) {
                     return const SaleCard();
                   }),
-                ),
+                ),*/
             ),
             ElevatedButton(
               onPressed: () {},

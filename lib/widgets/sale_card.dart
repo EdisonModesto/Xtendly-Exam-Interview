@@ -8,11 +8,11 @@ import '../constants/breakpoints.dart';
 
 class SaleCard extends ConsumerStatefulWidget {
   const SaleCard({
-    //required this.screenWidth,
+    required this.screenWidth,
     Key? key,
   }) : super(key: key);
 
-  //final double screenWidth;
+  final double screenWidth;
 
   @override
   ConsumerState createState() => _SaleCardState();
@@ -22,8 +22,16 @@ class _SaleCardState extends ConsumerState<SaleCard> {
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(builder: (context, constraints){
+    // Retrieve the screen width from the constraints
+      final screenWidth = widget.screenWidth;
+
+      // Calculate the new height based on the screen width
+      double newHeight = screenWidth * (widget.screenWidth < mobileBreakpoint ? 0.7 : 0.3); // Adjust this factor as per your requirement
+
+      // Apply the maximum and minimum height constraints
+      newHeight = newHeight.clamp(200.0, 400.0);
       return SizedBox(
-        height: 400,
+        height: newHeight,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -42,21 +50,24 @@ class _SaleCardState extends ConsumerState<SaleCard> {
                   Align(
                     alignment: Alignment.topRight,
                     child: Transform.translate(
-                      offset: Offset((constraints.maxWidth * .50)/2, 20),
+                      offset: widget.screenWidth < mobileBreakpoint ? Offset(24, 12) : Offset(45, 20),
                       child: Container(
-                        width: constraints.maxWidth * .50,
-                        height: 40,
+                        width: widget.screenWidth < mobileBreakpoint ? 48 : 90,
+                        height: widget.screenWidth < mobileBreakpoint ? 24 : 40,
+                        padding: const EdgeInsets.all(5),
                         decoration: BoxDecoration(
                             color: AppColors().saleTag
                         ),
                         child: Center(
-                          child: Text(
+                          child: AutoSizeText(
                             "15% OFF",
                             style: GoogleFonts.inter(
-                              fontSize: 18,
+                              fontSize: widget.screenWidth < mobileBreakpoint ? 11 : 18,
                               color: AppColors().white,
                               fontWeight: FontWeight.w500,
                             ),
+                            minFontSize: 0,
+                            maxLines: 1,
                           ),
                         ),
                       ),
@@ -65,7 +76,7 @@ class _SaleCardState extends ConsumerState<SaleCard> {
                 ],
               ),
             ),
-            const SizedBox(height: 20),
+            SizedBox(height: widget.screenWidth < mobileBreakpoint ? 10 : 20),
             FittedBox(
               fit: BoxFit.scaleDown,
               child: Text(
@@ -73,7 +84,7 @@ class _SaleCardState extends ConsumerState<SaleCard> {
                 style: GoogleFonts.inter(
                   color: Colors.black,
                   fontWeight: FontWeight.w600,
-                    fontSize: constraints.maxWidth / 11 * 0.8
+                    fontSize: widget.screenWidth < mobileBreakpoint ? 15 : 18,
                 ),
                 maxLines: 1,
               ),
@@ -83,7 +94,7 @@ class _SaleCardState extends ConsumerState<SaleCard> {
               child: Text(
                 "Lorem Ipsum",
                 style: GoogleFonts.inter(
-                  fontSize: constraints.maxWidth / 11 * 0.8,
+                  fontSize: widget.screenWidth < mobileBreakpoint ? 15 : 18,
                   color: Colors.black,
                 ),
 

@@ -47,7 +47,7 @@ class _ProductsViewState extends ConsumerState<ProductsView> {
                       style: ElevatedButton.styleFrom(
                         backgroundColor: AppColors().white,
                         shadowColor: Colors.black.withOpacity(.25),
-                        fixedSize:  constraints.maxWidth < mobileBreakpoint ? const Size(127, 25) : const Size(218, 57),
+                        fixedSize:  constraints.maxWidth < mobileBreakpoint ? const Size(140, 25) : const Size(218, 57),
                       ),
                       child: Text(
                         "Sweatshirts",
