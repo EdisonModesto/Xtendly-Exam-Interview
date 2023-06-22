@@ -18,7 +18,7 @@ class _HeroViewState extends ConsumerState<HeroView> {
     return LayoutBuilder(builder: (context, constraints){
       return Container(
         height: 1024,
-        width: MediaQuery.of(context).size.width,
+        width: 1440,
         decoration: const BoxDecoration(
           image: DecorationImage(
             image: AssetImage("assets/images/bg_hero.png"),
