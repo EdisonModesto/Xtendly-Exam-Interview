@@ -1,3 +1,4 @@
+import 'package:auto_animated/auto_animated.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:xtendly_exam_interview/view/home/Hero/HeroView.dart';
@@ -20,24 +21,32 @@ class HomeView extends ConsumerStatefulWidget {
 class _HomeViewState extends ConsumerState<HomeView> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Padding(
-        padding: EdgeInsets.all(0),
-        child: Stack(
-          children: [
-            SingleChildScrollView(
-              child: Column(
-                children: [
-                  HeroView(),
-                  ProductsView(),
-                  SaleBanner(),
-                  SaleView(),
-                  CustomFooter()
-                ],
-              ),
+    return Scaffold(
+      body: SizedBox(
+        width: MediaQuery.of(context).size.width,
+        child: const Padding(
+          padding: EdgeInsets.all(0),
+          child: Center(
+            child: Stack(
+              children: [
+                AnimateIfVisibleWrapper(
+                  showItemInterval: Duration(milliseconds: 150),
+                  child: SingleChildScrollView(
+                    child: Column(
+                      children: [
+                        HeroView(),
+                        ProductsView(),
+                        SaleBanner(),
+                        SaleView(),
+                        CustomFooter()
+                      ],
+                    ),
+                  ),
+                ),
+                CustomNav(),
+              ],
             ),
-            CustomNav(),
-          ],
+          ),
         ),
       ),
     );

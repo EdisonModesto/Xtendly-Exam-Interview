@@ -139,7 +139,7 @@ class _CustomNavState extends ConsumerState<CustomNav> {
               Container(
                 height: 66,
                 color: AppColors().white,
-                padding: const EdgeInsets.symmetric(horizontal: 58),
+                padding: EdgeInsets.symmetric(horizontal: (constraints.maxWidth * 0.04).clamp(25, 58)),
                 child: Row(
                   children: [
                     CircleAvatar(
@@ -161,73 +161,97 @@ class _CustomNavState extends ConsumerState<CustomNav> {
                     const Spacer(),
                     TextButton(
                       onPressed: () {},
+                      style: TextButton.styleFrom(
+                        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 0),
+                        tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                      ),
                       child: Text(
                         "HOME",
                         style: GoogleFonts.inter(
                           color: Colors.black,
-                          fontSize: 16,
+                          fontSize: (constraints.maxWidth * 0.0112).clamp(10, 16),
                           fontWeight: FontWeight.w500,
                         ),
                       ),
                     ),
                     TextButton(
                       onPressed: () {},
+                      style: TextButton.styleFrom(
+                        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 0),
+                        tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                      ),
                       child: Text(
                         "NEW ARRIVAL",
                         style: GoogleFonts.inter(
                           color: Colors.black,
-                          fontSize: 16,
+                          fontSize: (constraints.maxWidth * 0.0112).clamp(10, 16),
                           fontWeight: FontWeight.w500,
                         ),
                       ),
                     ),
                     TextButton(
                       onPressed: () {},
+                      style: TextButton.styleFrom(
+                        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 0),
+                        tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                      ),
                       child: Text(
                         "SHOP",
                         style: GoogleFonts.inter(
                           color: Colors.black,
-                          fontSize: 16,
+                          fontSize: (constraints.maxWidth * 0.0112).clamp(10, 16),
                           fontWeight: FontWeight.w500,
                         ),
                       ),
                     ),
                     TextButton(
                       onPressed: () {},
+                      style: TextButton.styleFrom(
+                        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 0),
+                        tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                      ),
                       child: Text(
                         "LAST COLLECTION",
                         style: GoogleFonts.inter(
                           color: Colors.black,
-                          fontSize: 16,
+                          fontSize: (constraints.maxWidth * 0.0112).clamp(10, 16),
                           fontWeight: FontWeight.w500,
                         ),
                       ),
                     ),
                     TextButton(
                       onPressed: () {},
+                      style: TextButton.styleFrom(
+                        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 0),
+                        tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                      ),
                       child: Text(
                         "MEN",
                         style: GoogleFonts.inter(
                           color: Colors.black,
-                          fontSize: 16,
+                          fontSize: (constraints.maxWidth * 0.0112).clamp(10, 16),
                           fontWeight: FontWeight.w500,
                         ),
                       ),
                     ),
                     TextButton(
                       onPressed: () {},
+                      style: TextButton.styleFrom(
+                        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 0),
+                        tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                      ),
                       child: Text(
                         "WOMEN",
                         style: GoogleFonts.inter(
                           color: Colors.black,
-                          fontSize: 16,
+                          fontSize: (constraints.maxWidth * 0.0112).clamp(10, 16),
                           fontWeight: FontWeight.w500,
                         ),
                       ),
                     ),
-                    const SizedBox(width: 50,),
+                    SizedBox(width: (constraints.maxWidth * 0.035).clamp(0, 50),),
                     SizedBox(
-                      width: 194,
+                      width: (constraints.maxWidth * 0.135).clamp(0, 194),
                       height: 30,
                       child: TextField(
                         decoration: InputDecoration(
@@ -251,21 +275,21 @@ class _CustomNavState extends ConsumerState<CustomNav> {
                         ),
                       ),
                     ),
-                    const SizedBox(width: 25,),
+                    SizedBox(width: (constraints.maxWidth * 0.018).clamp(0, 25),),
                     IconButton(
                       onPressed: () {},
-                      icon: const Icon(
+                      icon: Icon(
                         Icons.cases_outlined,
                         color: Colors.black,
-                        size: 28,
+                        size: (constraints.maxWidth * 0.02).clamp(20, 28),
                       ),
                     ),
                     IconButton(
                       onPressed: () {},
-                      icon: const Icon(
+                      icon: Icon(
                         Icons.star_border_outlined,
                         color: Colors.black,
-                        size: 28,
+                        size: (constraints.maxWidth * 0.02).clamp(20, 28),
                       ),
                     ),
                   ],
